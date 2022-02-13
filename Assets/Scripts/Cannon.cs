@@ -24,7 +24,7 @@ public class Cannon : MonoBehaviour {
                     Quaternion rotation = Quaternion.Euler(spread) * spawnPoint.rotation;
 
                     GameObject b = LeanPool.Spawn(bullet, spawnPoint.position, rotation);
-                    LeanPool.Despawn(b, 2);
+                    LeanPool.Despawn(b, 1);
                 }
 
                 value = max;
