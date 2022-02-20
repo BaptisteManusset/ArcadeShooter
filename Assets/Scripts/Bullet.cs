@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour, IPoolable {
     }
 
     public void OnSpawn() {
-        rb.velocity = transform.forward * 50;
+        rb.velocity = transform.forward * 150;
     }
 
     public void OnDespawn() {

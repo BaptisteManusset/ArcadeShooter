@@ -7,13 +7,15 @@ public class Cannon : MonoBehaviour {
 
 
     [SerializeField] private float value = 0;
-    [Range(0, 0.1f)] [SerializeField] private float max = .1f;
+    [Range(0, 0.1f)] [SerializeField] private float countdownMax = .05f;
 
 
     [SerializeField] [Space] float coneSize = 5;
 
 
     private void Update() {
+        if (Manager.gameStat == Manager.GameStat.Gameover) return;
+
         if (Input.GetMouseButton(0)) {
             if (value <= 0) {
                 for (int i = 0; i < 5; i++) {
@@ -24,10 +26,10 @@ public class Cannon : MonoBehaviour {
                     Quaternion rotation = Quaternion.Euler(spread) * spawnPoint.rotation;
 
                     GameObject b = LeanPool.Spawn(bullet, spawnPoint.position, rotation);
-                    LeanPool.Despawn(b, 1);
+                    LeanPool.Despawn(b, .5f);
                 }
 
-                value = max;
+                value = countdownMax;
             }
             else {
                 value -= Time.deltaTime;

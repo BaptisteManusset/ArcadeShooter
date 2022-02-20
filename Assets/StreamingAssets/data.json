@@ -1,0 +1,24 @@
+[
+    {
+        "Key": "HightScore",
+        "Value": {
+            "entries": [
+                {
+                    "Key": "Pseudo",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 0.0,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+]

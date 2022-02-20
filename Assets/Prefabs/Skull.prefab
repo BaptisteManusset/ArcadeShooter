@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1528733506615083927}
   m_Layer: 0
   m_Name: Skull
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1528733506615083929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.37, y: 9.64, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4545229570750680981}
   m_Father: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   currentHealth: -1
   maxHealth: 10
   deathParticle: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
+  BodyCanTakeDamage: 1
 --- !u!114 &1528733506615083927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96057fcc6710d6f4e94f3d3952f190c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.2
+  speed: 0.8
 --- !u!1 &8542589373522022449
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +155,6 @@ GameObject:
   - component: {fileID: 4545229570750680981}
   - component: {fileID: 2259966275862677400}
   - component: {fileID: 372153202121367242}
-  - component: {fileID: 7009668707751614394}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -225,16 +225,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7009668707751614394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8542589373522022449}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

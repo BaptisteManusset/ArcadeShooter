@@ -14,6 +14,9 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
 
     [Space] [SerializeField] private GameObject deathParticle;
 
+
+    [SerializeField] private bool BodyCanTakeDamage = true;
+
     private bool alreadyDead;
 
     private void Awake() {
@@ -60,20 +63,20 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
         SetHealth(currentHealth + value);
     }
 
-
-    private void OnCollisionEnter(Collision other) {
-        if (other.collider.CompareTag("Bullet")) {
-            TakeDamage(1);
-        }
-    }
-
     public void OnSpawn() {
         alreadyDead = false;
         currentHealth = maxHealth;
     }
 
     public void OnDespawn() {
-        //
+        /**/
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (BodyCanTakeDamage == false) return;
+        if (other.collider.CompareTag("Bullet")) {
+            TakeDamage(1);
+        }
     }
 }
 
