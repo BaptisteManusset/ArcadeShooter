@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour {
     }
 
     void Spawning(GameObject gameObject) {
+        if (!GameState.IsPlay()) return;
         LeanPool.Spawn(gameObject, transform.position + position, transform.rotation);
     }
 

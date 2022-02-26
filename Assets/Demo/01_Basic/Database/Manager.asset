@@ -15,4 +15,4 @@ MonoBehaviour:
   dataObjects:
   - id: Databox
     dataObject: {fileID: 11400000, guid: 040a7b2296f606b4db8961cfb10b355c, type: 2}
-    editorOpen: 1
+    editorOpen: 0

@@ -14,8 +14,7 @@ public class Cannon : MonoBehaviour {
 
 
     private void Update() {
-        if (Manager.gameStat == Manager.GameStat.Gameover) return;
-
+        if (!GameState.IsPlay()) return;
         if (Input.GetMouseButton(0)) {
             if (value <= 0) {
                 for (int i = 0; i < 5; i++) {

@@ -1,33 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Databox;
+using Databox.Dictionary;
 using UnityEngine;
+using UnityEngine.Events;
 
-[CreateAssetMenu]
-public class ScoreBoard : ScriptableObject {
-    [SerializeField] private ScoreDictionary HightScore;
+public class ScoreBoard : MonoBehaviour {
+    [SerializeField] private DataboxObject database;
+
+    public static DataboxObject Database {
+        get { return FindObjectOfType<ScoreBoard>().database; }
+    }
+
+    public const string TableId = "HightScore";
+    private const string ScoreId = "Score";
+
+    public static UnityAction OnNewHightScore;
+    private Manager manager;
 
 
-    [SerializeField] private ScoreDictionary scoreList;
+    [ContextMenu("Add Data")]
+    public void AddData() {
+        SetScore();
+    }
 
-
-    [Serializable]
-    public class ScoreDictionary : SerializableDictionary<string, float> { }
-
-    public void AddScore(string pseudo, float value) {
-        if (scoreList.ContainsKey(pseudo)) {
-            scoreList[pseudo] = value;
-            return;
+    private void SetScore() {
+        FloatType score = new FloatType() { Value = Timer.time };
+        
+        if (database.EntryExists(TableId, manager.Pseudo)) {
+            FloatType data = database.GetData<FloatType>(TableId, manager.Pseudo, ScoreId);
+            if (!(data.Value < score.Value)) return;
+            database.SetData<FloatType>(TableId, manager.Pseudo, ScoreId, score);
+            OnNewHightScore?.Invoke();
         }
-
-        scoreList.Add(pseudo, value);
+        else {
+            database.AddData(TableId, manager.Pseudo, ScoreId, score);
+            OnNewHightScore?.Invoke();
+        }
     }
 
-    public float GetScore(string pseudo) {
-        return scoreList.TryGetValue(pseudo, out float value) ? scoreList[pseudo] : -1;
+    private void Awake() {
+        manager = GetComponent<Manager>();
+        OnNewHightScore += NewHightScore;
+
+        GameState.OnGameOverEnter += SetScore;
     }
 
-    [ContextMenu("Clear Score")]
-    public void Clear() {
-        scoreList.Clear();
+    private void NewHightScore() {
+        Debug.Log("New Hight Score !!!");
+    }
+
+
+    private void OnDisable() {
+        if (database)
+            database.SaveDatabase();
+    }
+
+    private void OnDestroy() {
+        if (database)
+            database.SaveDatabase();
+    }
+
+
+    public static OrderedDictionary<string, DataboxObject.DatabaseEntry> GetEntry() {
+        var slt = Database.GetEntriesFromTable(TableId);
+        return slt;
     }
 }

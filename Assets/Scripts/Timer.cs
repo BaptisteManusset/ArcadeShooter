@@ -3,19 +3,19 @@ using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour {
-    [SerializeField, Tooltip("Time in second")] private float timer = 30;
+    [SerializeField, Tooltip("Time in second")] public static float time = 30;
 
     [SerializeField] private TMP_Text timerText;
 
 
     void Update() {
-        if (Manager.gameStat == Manager.GameStat.Gameover) return;
-        timer += Time.deltaTime;
+        if (!GameState.IsPlay()) return;
+        time += Time.deltaTime;
         DisplayTimer();
     }
 
     private void DisplayTimer() {
-        timerText.text = FormatTime(timer);
+        timerText.text = FormatTime(time);
     }
 
 
@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour {
     }
 
     public void Reset() {
-        timer = 0;
+        time = 0;
         DisplayTimer();
     }
 }

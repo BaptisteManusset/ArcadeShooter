@@ -80,16 +80,14 @@ namespace StarterAssets {
         }
 
         private void Update() {
-            if (Manager.gameStat == Manager.GameStat.Gameover) return;
-
+            if (!GameState.IsPlay()) return;
             JumpAndGravity();
             GroundedCheck();
             Move();
         }
 
         private void LateUpdate() {
-            if (Manager.gameStat == Manager.GameStat.Gameover) return;
-
+            if (!GameState.IsPlay()) return;
             CameraRotation();
         }
 

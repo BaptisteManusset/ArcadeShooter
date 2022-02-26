@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -10,8 +9,12 @@ public class Player : MonoBehaviour {
 
 
     private void OnCollisionEnter(Collision other) {
-        if (other.collider.CompareTag("Ennemy")) {
-            Manager.onDead?.Invoke();
-        }
+        if (other.collider.CompareTag("Ennemy"))
+            GameState.TriggerGameOver();
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.CompareTag("Ennemy"))
+            GameState.TriggerGameOver();
     }
 }

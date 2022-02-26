@@ -21,19 +21,20 @@ MonoBehaviour:
 
 '
   cloudProgress: 0
-  savePath: D:/_Projects/doorfortyfour/Databox/Unity/Databox_2019.2/Databox_2019.2/Assets/StreamingAssets\DataboxExamples/01_Basic/Database.json
   fileName: DataboxExamples/01_Basic/Database.json
   selectedApplicationPath: 1
   debugMode: 0
   showFieldTypes: 0
   showInitValues: 0
   automaticSave: 1
+  automaticLoad: 1
+  databoxScheme: {fileID: 0}
   encryption: 0
   encryptionKey: 123456
   compressJson: 0
   dataFormat: 0
   collapsedView: 1
-  showInspector: 0
+  showInspector: 1
   entriesPerPage: 99
   googleSheetUrl: 
   googleWorksheets: []

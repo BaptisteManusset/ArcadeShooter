@@ -4,13 +4,418 @@
         "Value": {
             "entries": [
                 {
-                    "Key": "Pseudo",
+                    "Key": "ddfsfsd",
                     "Value": {
                         "selected": false,
                         "data": {
                             "Score": {
                                 "FloatType": {
-                                    "_float": 0.0,
+                                    "_float": 27.29341,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "sdsqqdsqds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 4.018669,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdsqs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 3.818492,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfsf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.179487,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "ddfdfgdfg",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 22.11007,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfgf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 50.39756,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "ddgfdfg",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 173.2565,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "sqddqsqds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 4.9799,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.456685,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.876752,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "aaaaaaaaaaaaaaa",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 14.0566,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "zzzzzzzzzzzzzzzzzzzz",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.157065,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.556229,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 68.19312,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "bonjour",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 0.9775614,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "samiy",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 91.10085,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "sdq",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 15.87804,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsffd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 23.73822,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsq",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 3.577593,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdsds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 10.0778,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfdsf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 12.94456,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 12.25527,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "ccccccccccc",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 20.49835,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "266",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 0.9792408,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "zZ",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 4.377807,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfsdf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 14.60654,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "sdfdfsd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 11.3178,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dffsdsf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 73.27753,
                                     "InitValue": 0.0,
                                     "$type": "FloatType"
                                 }

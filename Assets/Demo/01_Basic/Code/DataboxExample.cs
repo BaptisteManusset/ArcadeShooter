@@ -9,8 +9,8 @@ namespace Databox.Examples
 	{
 		
 		public DataboxObject database;
-		public SimpleDataboxLinking cube;
-		public SimpleDataboxLinking sphere;
+		public SimpleDataImportFromDatabase cube;
+		public SimpleDataImportFromDatabase sphere;
 		
 		
 		public void Start()

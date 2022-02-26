@@ -31,7 +31,7 @@ MonoBehaviour:
   encryptionKey: 123456
   compressJson: 0
   dataFormat: 0
-  collapsedView: 1
+  collapsedView: 0
   showInspector: 1
   entriesPerPage: 99
   googleSheetUrl: 

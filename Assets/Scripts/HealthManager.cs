@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
 
 
     [Space] [SerializeField] private GameObject deathParticle;
-
+    [SerializeField] private Transform deathParticleSpawn;
 
     [SerializeField] private bool BodyCanTakeDamage = true;
 
@@ -49,7 +49,9 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
 
     private void Died() {
         alreadyDead = true;
-        LeanPool.Spawn(deathParticle, transform.position, quaternion.identity);
+        if (deathParticleSpawn == null) deathParticleSpawn = transform;
+
+        LeanPool.Spawn(deathParticle, deathParticleSpawn.position, quaternion.identity);
 
         LeanPool.Despawn(gameObject, .1f);
     }
