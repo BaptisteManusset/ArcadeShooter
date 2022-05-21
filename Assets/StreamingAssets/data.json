@@ -422,6 +422,366 @@
                             }
                         }
                     }
+                },
+                {
+                    "Key": "dsqsd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 18.27792,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 3.938572,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "11111111",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 10.97781,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "gdfdfggf",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 10.29748,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfdfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 37.07875,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdsdfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 5.679979,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfdsdfsdfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 10.43493,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dqsdsqds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 2.863591,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfsdfdfsd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 44.47765,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "fgdfgfd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 16.01558,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "sddsqqdsqds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 14.44875,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "ddfsdfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 9.894863,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "fddfgdfg",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 10.70745,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "fgdfgdfgdg",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 4.899671,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "hello",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 94.15797,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "-ituytuy",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 133.3817,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdsdfsfd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 27.15926,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "bite",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 92.29929,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dffsfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 47.95697,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsdfsdsds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 73.35966,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "prot",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 209.3465,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dsqsddsq",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 74.45982,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dqsdqsqds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 107.4592,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "dfsdfsdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 50.85519,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         }
