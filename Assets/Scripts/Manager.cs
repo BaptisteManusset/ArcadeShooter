@@ -9,11 +9,11 @@ public class Manager : MonoBehaviour {
     private void Awake() {
         Time.timeScale = 0;
 
-        GameState.OnGameOverEnter += ONDead;
+        GameState.OnGameOverEnter += OnGameOverEnter;
         GameState.OnPlayEnter += ONRestart;
     }
 
-    private void ONDead() {
+    private void OnGameOverEnter() {
         if (!GameState.IsPlay()) return;
 
         GameState.Current = GameState.GameStat.Gameover;

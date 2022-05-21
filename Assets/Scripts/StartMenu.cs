@@ -6,8 +6,17 @@ public class StartMenu : MonoBehaviour {
 
     [SerializeField] private TMP_InputField inputField;
 
+
+    private MouseLock mouseLock;
+
     private void Awake() {
         manager = FindObjectOfType<Manager>();
+
+        mouseLock = FindObjectOfType<MouseLock>();
+    }
+
+    private void Update() {
+        mouseLock.SetCursorLock(false);
     }
 
     public void OnEnter() {

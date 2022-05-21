@@ -1,4 +1,6 @@
 ﻿using System;
+using Hellmade.Sound;
+// using LeakyAbstraction;
 using Lean.Pool;
 using Unity.Mathematics;
 using UnityEngine;
@@ -6,8 +8,6 @@ using UnityEngine.Events;
 
 [DisallowMultipleComponent]
 public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
-    private Rigidbody rb;
-
     [SerializeField] private float currentHealth = -1;
     [SerializeField] public float maxHealth = 100;
 
@@ -19,13 +19,40 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
 
     private bool alreadyDead;
 
-    private void Awake() {
-        rb = GetComponent<Rigidbody>();
-    }
-
 
     public UnityAction OnDead;
+    public UnityAction OnTakeDamage;
     public UnityAction OnHealthChange;
+    private Rigidbody rb;
+
+
+    private void Awake() {
+        rb = GetComponent<Rigidbody>();
+
+        currentHealth = maxHealth;
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        if (BodyCanTakeDamage == false) return;
+        if (other.collider.CompareTag("Bullet")) {
+            TakeDamage(1);
+        }
+    }
+
+    public bool TakeDamage(float value) {
+        OnTakeDamage?.Invoke();
+        SetHealth(currentHealth - value);
+        return true;
+    }
+
+    public void OnSpawn() {
+        alreadyDead = false;
+        currentHealth = maxHealth;
+    }
+
+    public void OnDespawn() {
+        /**/
+    }
 
     public float GetHealth() {
         return currentHealth;
@@ -50,35 +77,17 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
     private void Died() {
         alreadyDead = true;
         if (deathParticleSpawn == null) deathParticleSpawn = transform;
+        OnDead?.Invoke();
+
 
         LeanPool.Spawn(deathParticle, deathParticleSpawn.position, quaternion.identity);
 
         LeanPool.Despawn(gameObject, .1f);
     }
 
-    public bool TakeDamage(float value) {
-        SetHealth(currentHealth - value);
-        return true;
-    }
 
     public void IncreaseHealth(float value = 1) {
         SetHealth(currentHealth + value);
-    }
-
-    public void OnSpawn() {
-        alreadyDead = false;
-        currentHealth = maxHealth;
-    }
-
-    public void OnDespawn() {
-        /**/
-    }
-
-    private void OnCollisionEnter(Collision other) {
-        if (BodyCanTakeDamage == false) return;
-        if (other.collider.CompareTag("Bullet")) {
-            TakeDamage(1);
-        }
     }
 }
 

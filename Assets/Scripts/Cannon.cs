@@ -1,3 +1,6 @@
+// // using LeakyAbstraction;
+
+using Hellmade.Sound;
 using Lean.Pool;
 using UnityEngine;
 
@@ -13,6 +16,13 @@ public class Cannon : MonoBehaviour {
     [SerializeField] [Space] float coneSize = 5;
 
 
+    [SerializeField] private AudioClip shootSound;
+    private AudioSource audioSource;
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update() {
         if (!GameState.IsPlay()) return;
         if (Input.GetMouseButton(0)) {
@@ -25,6 +35,10 @@ public class Cannon : MonoBehaviour {
                     Quaternion rotation = Quaternion.Euler(spread) * spawnPoint.rotation;
 
                     GameObject b = LeanPool.Spawn(bullet, spawnPoint.position, rotation);
+
+                    audioSource.PlayOneShot(shootSound,1 );
+
+
                     LeanPool.Despawn(b, .5f);
                 }
 

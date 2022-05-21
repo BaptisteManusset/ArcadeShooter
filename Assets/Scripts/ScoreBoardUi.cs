@@ -1,3 +1,5 @@
+using Databox;
+using Databox.Dictionary;
 using TMPro;
 using UnityEngine;
 
@@ -33,30 +35,33 @@ public class ScoreBoardUi : MonoBehaviour {
     private void OnNewHightScore() {
         Clearing();
 
-        var table = ScoreBoard.Database.GetEntriesFromTable(ScoreBoard.TableId);
+        OrderedDictionary<string, DataboxObject.DatabaseEntry> table = ScoreBoard.Database.GetEntriesFromTable(ScoreBoard.TableId);
 
         //Debug.Log(_table.Count + " Entries in " + tableName);
-
         // Then we iterate through all entries
-        foreach (var entry in table.Keys) {
+        foreach (string entry in table.Keys) {
+            
+            
+            
             string text = "";
             text += $"[{entry}] ";
 
             // Next we get for each entry all values inside of it
-            var _values = ScoreBoard.Database.GetValuesFromEntry(ScoreBoard.TableId, entry);
+            // var _values = ScoreBoard.Database.GetValuesFromEntry(ScoreBoard.TableId, entry);
 
             //Debug.Log(_values.Count + " Values in " + entry);
 
             // Then we iterate through all values
-            foreach (string value in _values.Keys) {
-                // Finally we try to get all float values inside of each entry
-                FloatType _float;
-                if (ScoreBoard.Database.TryGetData<FloatType>(ScoreBoard.TableId, entry, value, out _float)) {
-                    // Return the float value 
 
-                    text += $"{_float.Value} ";
-                }
+            // foreach (string value in _values.Keys) {
+            // Finally we try to get all float values inside of each entry
+            FloatType _float;
+            if (ScoreBoard.Database.TryGetData(ScoreBoard.TableId, entry, "Score", out _float)) {
+                // Return the float value 
+
+                text += $"{_float.Value} ";
             }
+            // }
 
             var p = Instantiate(Prefab, content.transform);
             var t = p.GetComponentInChildren<TMP_Text>();

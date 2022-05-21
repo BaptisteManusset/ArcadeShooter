@@ -1,4 +1,5 @@
 using System;
+// using LeakyAbstraction;
 using Lean.Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,6 +9,8 @@ public class CircleSpawner : MonoBehaviour {
 
     [SerializeField] private GameObject entity;
 
+    // [SerializeField] private GameSound soundAtSpawn = GameSound.None;
+
     private void Start() {
         InvokeRepeating(nameof(Spawning), 1, 10);
     }
@@ -16,6 +19,9 @@ public class CircleSpawner : MonoBehaviour {
         if (!GameState.IsPlay()) return;
 
         LeanPool.Spawn(entity, transform.position + RandomPointOnCircleEdge(distance), transform.rotation);
+
+        // if (soundAtSpawn != GameSound.None)
+            // SoundManager.Instance.PlaySound(soundAtSpawn);
     }
 
     public static Vector3 RandomPointOnCircleEdge(float radius) {

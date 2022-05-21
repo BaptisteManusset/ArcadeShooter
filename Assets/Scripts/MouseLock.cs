@@ -12,7 +12,7 @@ public class MouseLock : MonoBehaviour {
     }
 
 
-    private void SetCursorLock(bool cursorLock) {
+    public void SetCursorLock(bool cursorLock) {
         if (cursorLock) {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
