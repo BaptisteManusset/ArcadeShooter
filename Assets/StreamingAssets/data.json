@@ -782,6 +782,36 @@
                             }
                         }
                     }
+                },
+                {
+                    "Key": "dfdsdfdfs",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 16.5595,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "Key": "fdsdffds",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 91.25303,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 405418708222623047}
   - component: {fileID: 6171807202444761048}
   m_Layer: 0
-  m_Name: Shield
+  m_Name: Shielder
   m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

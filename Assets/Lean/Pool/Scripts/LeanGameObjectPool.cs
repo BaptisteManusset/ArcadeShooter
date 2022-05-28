@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -795,6 +796,14 @@ namespace Lean.Pool {
                 }
 
                 spawnedClonesList.Clear();
+            }
+        }
+
+        private void OnValidate() {
+            if(prefab != null) gameObject.name = prefab.name + " Pool";
+            else {
+                gameObject.name = "Empty Pool";
+                Debug.LogWarning("Prefab is null on " + gameObject.name + ".");
             }
         }
     }
