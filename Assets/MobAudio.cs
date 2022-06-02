@@ -29,7 +29,8 @@ public class MobAudio : MonoBehaviour, IPoolable {
 	private void OnHealthChange() { }
 
 	private void OnTakeDamage() {
-		EazySoundManager.PlaySound( mobSound.damageSound, transform );
+		// EazySoundManager.PlaySound( mobSound.damageSound, transform );
+		PoolManager.Instance.VFX.Default.Spawn(transform.position);
 	}
 
 	private void OnDead() {
