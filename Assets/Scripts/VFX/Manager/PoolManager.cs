@@ -4,6 +4,7 @@ using System.Runtime.Remoting.Messaging;
 using Databox.Utils;
 using Lean.Pool;
 using UnityEngine;
+using VFX.Manager;
 
 public class PoolManager : Singleton<PoolManager> {
 

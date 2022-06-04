@@ -1,9 +1,10 @@
 ﻿using System;
+using Manager;
 using TMPro;
 using UnityEngine;
 
 public class Timer : MonoBehaviour {
-    [SerializeField, Tooltip("Time in second")] public static float time = 30;
+    [Tooltip("Time in second")] public static float time = 30;
 
     [SerializeField] private TMP_Text timerText;
 

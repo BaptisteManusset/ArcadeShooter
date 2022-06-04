@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 public class PlayerVfx : MonoBehaviour {
     private void Awake() {

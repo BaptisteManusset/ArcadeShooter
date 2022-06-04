@@ -143,7 +143,7 @@ namespace Lean.Pool {
         public Transform DeactivatedChild {
             get {
                 if (deactivatedChild == null) {
-                    var child = new GameObject("Despawned Clones");
+                    GameObject child = new GameObject("Despawned Clones");
 
                     child.SetActive(false);
 
@@ -161,8 +161,8 @@ namespace Lean.Pool {
         /// NOTE: This is only available in the editor.</summary>
         public bool DespawnedClonesMatch {
             get {
-                for (var i = despawnedClones.Count - 1; i >= 0; i--) {
-                    var clone = despawnedClones[i];
+                for (int i = despawnedClones.Count - 1; i >= 0; i--) {
+                    GameObject clone = despawnedClones[i];
 
                     if (clone != null && UnityEditor.PrefabUtility.GetCorrespondingObjectFromSource(clone) != prefab) {
                         return false;
@@ -182,7 +182,7 @@ namespace Lean.Pool {
         /// <summary>Find the pool responsible for handling the specified prefab clone.
         /// NOTE: This can be an expensive operation if you have many large pools.</summary>
         public static bool TryFindPoolByClone(GameObject clone, ref LeanGameObjectPool pool) {
-            foreach (var instance in Instances) {
+            foreach (LeanGameObjectPool instance in Instances) {
                 // Search hash set
                 if (instance.spawnedClonesHashSet.Contains(clone) == true) {
                     pool = instance;
@@ -191,7 +191,7 @@ namespace Lean.Pool {
                 }
 
                 // Search list
-                for (var j = instance.spawnedClonesList.Count - 1; j >= 0; j--) {
+                for (int j = instance.spawnedClonesList.Count - 1; j >= 0; j--) {
                     if (instance.spawnedClonesList[j] == clone) {
                         pool = instance;
 
@@ -221,27 +221,27 @@ namespace Lean.Pool {
         /// <summary>This will either spawn a previously despawned/preloaded clone, recycle one, create a new one, or return null.
         /// NOTE: This method is designed to work with Unity's event system, so it has no return value.</summary>
         public void Spawn() {
-            var clone = default(GameObject);
+            GameObject clone = default(GameObject);
             TrySpawn(ref clone);
         }
 
         /// <summary>This will either spawn a previously despawned/preloaded clone, recycle one, create a new one, or return null.
         /// NOTE: This method is designed to work with Unity's event system, so it has no return value.</summary>
         public void Spawn(Vector3 position) {
-            var clone = default(GameObject);
+            GameObject clone = default(GameObject);
             TrySpawn(ref clone, position, transform.localRotation);
         }
 
         /// <summary>This will either spawn a previously despawned/preloaded clone, recycle one, create a new one, or return null.</summary>
         public GameObject Spawn(Transform parent, bool worldPositionStays = false) {
-            var clone = default(GameObject);
+            GameObject clone = default(GameObject);
             TrySpawn(ref clone, parent, worldPositionStays);
             return clone;
         }
 
         /// <summary>This will either spawn a previously despawned/preloaded clone, recycle one, create a new one, or return null.</summary>
         public GameObject Spawn(Vector3 position, Quaternion rotation, Transform parent = null) {
-            var clone = default(GameObject);
+            GameObject clone = default(GameObject);
             TrySpawn(ref clone, position, rotation, parent);
             return clone;
         }
@@ -282,7 +282,7 @@ namespace Lean.Pool {
                 return false;
             }
 
-            var transform = prefab.transform;
+            Transform transform = prefab.transform;
             return TrySpawn(ref clone, transform.localPosition, transform.localRotation, transform.localScale, null, false);
         }
 
@@ -290,7 +290,7 @@ namespace Lean.Pool {
         public bool TrySpawn(ref GameObject clone, Vector3 localPosition, Quaternion localRotation, Vector3 localScale, Transform parent, bool worldPositionStays) {
             if (prefab != null) {
                 // Spawn a previously despawned/preloaded clone?
-                for (var i = despawnedClones.Count - 1; i >= 0; i--) {
+                for (int i = despawnedClones.Count - 1; i >= 0; i--) {
                     clone = despawnedClones[i];
 
                     despawnedClones.RemoveAt(i);
@@ -344,7 +344,7 @@ namespace Lean.Pool {
         /// <summary>This will despawn the oldest prefab clone that is still spawned.</summary>
         [ContextMenu("Despawn Oldest")]
         public void DespawnOldest() {
-            var clone = default(GameObject);
+            GameObject clone = default(GameObject);
 
             TryDespawnOldest(ref clone, true);
         }
@@ -377,8 +377,8 @@ namespace Lean.Pool {
             MergeSpawnedClonesToList();
 
             // Despawn
-            for (var i = spawnedClonesList.Count - 1; i >= 0; i--) {
-                var clone = spawnedClonesList[i];
+            for (int i = spawnedClonesList.Count - 1; i >= 0; i--) {
+                GameObject clone = spawnedClonesList[i];
 
                 if (clone != null) {
                     DespawnNow(clone);
@@ -388,7 +388,7 @@ namespace Lean.Pool {
             spawnedClonesList.Clear();
 
             // Clear all delays
-            for (var i = delays.Count - 1; i >= 0; i--) {
+            for (int i = delays.Count - 1; i >= 0; i--) {
                 LeanClassPool<Delay>.Despawn(delays[i]);
             }
 
@@ -407,8 +407,8 @@ namespace Lean.Pool {
                     TryDespawn(clone);
 
                     // If this clone was marked for delayed despawn, remove it
-                    for (var i = delays.Count - 1; i >= 0; i--) {
-                        var delay = delays[i];
+                    for (int i = delays.Count - 1; i >= 0; i--) {
+                        Delay delay = delays[i];
 
                         if (delay.Clone == clone) {
                             delays.RemoveAt(i);
@@ -431,8 +431,8 @@ namespace Lean.Pool {
                     LeanPool.Links.Remove(clone);
 
                     // If this clone was marked for delayed despawn, remove it
-                    for (var i = delays.Count - 1; i >= 0; i--) {
-                        var delay = delays[i];
+                    for (int i = delays.Count - 1; i >= 0; i--) {
+                        Delay delay = delays[i];
 
                         if (delay.Clone == clone) {
                             delays.RemoveAt(i);
@@ -453,7 +453,7 @@ namespace Lean.Pool {
         public void PreloadOneMore() {
             if (prefab != null) {
                 // Create clone
-                var clone = CreateClone(Vector3.zero, Quaternion.identity, Vector3.one, null, false);
+                GameObject clone = CreateClone(Vector3.zero, Quaternion.identity, Vector3.one, null, false);
 
                 // Add clone to despawned list
                 despawnedClones.Add(clone);
@@ -480,7 +480,7 @@ namespace Lean.Pool {
         public void PreloadAll() {
             if (preload > 0) {
                 if (prefab != null) {
-                    for (var i = Total; i < preload; i++) {
+                    for (int i = Total; i < preload; i++) {
                         PreloadOneMore();
                     }
                 }
@@ -493,7 +493,7 @@ namespace Lean.Pool {
         /// <summary>This will destroy all preloaded or despawned clones. This is useful if you've despawned more prefabs than you likely need, and want to free up some memory.</summary>
         [ContextMenu("Clean")]
         public void Clean() {
-            for (var i = despawnedClones.Count - 1; i >= 0; i--) {
+            for (int i = despawnedClones.Count - 1; i >= 0; i--) {
                 DestroyImmediate(despawnedClones[i]);
             }
 
@@ -541,13 +541,13 @@ namespace Lean.Pool {
 
         protected virtual void OnDestroy() {
             // If OnDestroy is called then the scene is likely changing, so we detach the spawned prefabs from the global links dictionary to prevent issues.
-            foreach (var clone in spawnedClonesList) {
+            foreach (GameObject clone in spawnedClonesList) {
                 if (clone != null) {
                     LeanPool.Detach(clone, false);
                 }
             }
 
-            foreach (var clone in spawnedClonesHashSet) {
+            foreach (GameObject clone in spawnedClonesHashSet) {
                 if (clone != null) {
                     LeanPool.Detach(clone, false);
                 }
@@ -556,8 +556,8 @@ namespace Lean.Pool {
 
         protected virtual void Update() {
             // Decay the life of all delayed destruction calls
-            for (var i = delays.Count - 1; i >= 0; i--) {
-                var delay = delays[i];
+            for (int i = delays.Count - 1; i >= 0; i--) {
+                Delay delay = delays[i];
 
                 delay.Life -= Time.deltaTime;
 
@@ -582,7 +582,7 @@ namespace Lean.Pool {
 
         private void RegisterPrefab() {
             if (prefab != null) {
-                var existingPool = default(LeanGameObjectPool);
+                LeanGameObjectPool existingPool = default(LeanGameObjectPool);
 
                 if (prefabMap.TryGetValue(prefab, out existingPool) == true) {
                     Debug.LogWarning("You have multiple pools managing the same prefab (" + prefab.name + ").", existingPool);
@@ -599,7 +599,7 @@ namespace Lean.Pool {
                 return;
             }
 
-            var existingPool = default(LeanGameObjectPool);
+            LeanGameObjectPool existingPool = default(LeanGameObjectPool);
 
             if (prefabMap.TryGetValue(prefab, out existingPool) == true && existingPool == this) {
                 prefabMap.Remove(prefab);
@@ -608,8 +608,8 @@ namespace Lean.Pool {
 
         private void DespawnWithDelay(GameObject clone, float t) {
             // If this object is already marked for delayed despawn, update the time and return
-            for (var i = delays.Count - 1; i >= 0; i--) {
-                var delay = delays[i];
+            for (int i = delays.Count - 1; i >= 0; i--) {
+                Delay delay = delays[i];
 
                 if (delay.Clone == clone) {
                     if (t < delay.Life) {
@@ -621,7 +621,7 @@ namespace Lean.Pool {
             }
 
             // Create delay
-            var newDelay = LeanClassPool<Delay>.Spawn() ?? new Delay();
+            Delay newDelay = LeanClassPool<Delay>.Spawn() ?? new Delay();
 
             newDelay.Clone = clone;
             newDelay.Life = t;
@@ -659,7 +659,7 @@ namespace Lean.Pool {
         }
 
         private GameObject CreateClone(Vector3 localPosition, Quaternion localRotation, Vector3 localScale, Transform parent, bool worldPositionStays) {
-            var clone = DoInstantiate(prefab, localPosition, localRotation, localScale, parent, worldPositionStays);
+            GameObject clone = DoInstantiate(prefab, localPosition, localRotation, localScale, parent, worldPositionStays);
 
             if (stamp == true) {
                 clone.name = prefab.name + " " + Total;
@@ -678,7 +678,7 @@ namespace Lean.Pool {
                     return (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(prefab, parent);
                 }
                 else {
-                    var clone = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(prefab, parent);
+                    GameObject clone = (GameObject)UnityEditor.PrefabUtility.InstantiatePrefab(prefab, parent);
 
                     clone.transform.localPosition = localPosition;
                     clone.transform.localRotation = localRotation;
@@ -693,7 +693,7 @@ namespace Lean.Pool {
                 return Instantiate(prefab, parent, true);
             }
             else {
-                var clone = Instantiate(prefab, localPosition, localRotation, parent);
+                GameObject clone = Instantiate(prefab, localPosition, localRotation, parent);
 
                 clone.transform.localPosition = localPosition;
                 clone.transform.localRotation = localRotation;
@@ -713,7 +713,7 @@ namespace Lean.Pool {
             }
 
             // Update transform
-            var cloneTransform = clone.transform;
+            Transform cloneTransform = clone.transform;
 
             cloneTransform.SetParent(null, false);
 
@@ -747,11 +747,11 @@ namespace Lean.Pool {
                     break;
                 case NotificationType.IPoolable:
                     clone.GetComponents(tempPoolables);
-                    for (var i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnSpawn();
+                    for (int i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnSpawn();
                     break;
                 case NotificationType.BroadcastIPoolable:
                     clone.GetComponentsInChildren(tempPoolables);
-                    for (var i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnSpawn();
+                    for (int i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnSpawn();
                     break;
             }
         }
@@ -766,11 +766,11 @@ namespace Lean.Pool {
                     break;
                 case NotificationType.IPoolable:
                     clone.GetComponents(tempPoolables);
-                    for (var i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnDespawn();
+                    for (int i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnDespawn();
                     break;
                 case NotificationType.BroadcastIPoolable:
                     clone.GetComponentsInChildren(tempPoolables);
-                    for (var i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnDespawn();
+                    for (int i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnDespawn();
                     break;
             }
         }
@@ -789,8 +789,8 @@ namespace Lean.Pool {
 
         public void OnAfterDeserialize() {
             if (recycle == false) {
-                for (var i = spawnedClonesList.Count - 1; i >= 0; i--) {
-                    var clone = spawnedClonesList[i];
+                for (int i = spawnedClonesList.Count - 1; i >= 0; i--) {
+                    GameObject clone = spawnedClonesList[i];
 
                     spawnedClonesHashSet.Add(clone);
                 }
@@ -858,11 +858,11 @@ namespace Lean.Pool.Editor {
         }
 
         private void DrawClones(string title, bool spawned, bool despawned, string propertyName) {
-            var property = serializedObject.FindProperty(propertyName);
-            var rect = EditorGUILayout.BeginVertical();
+            SerializedProperty property = serializedObject.FindProperty(propertyName);
+            Rect rect = EditorGUILayout.BeginVertical();
             EditorGUILayout.LabelField(string.Empty, GUILayout.Height(EditorGUI.GetPropertyHeight(property)));
             EditorGUILayout.EndVertical();
-            var rectF = rect;
+            Rect rectF = rect;
             rectF.height = 16;
 
             tgt.GetClones(tempClones, spawned, despawned);
@@ -872,7 +872,7 @@ namespace Lean.Pool.Editor {
             UnityEditor.EditorGUI.IntField(rect, title, tempClones.Count);
 
             if (property.isExpanded == true) {
-                foreach (var clone in tempClones) {
+                foreach (GameObject clone in tempClones) {
                     EditorGUILayout.ObjectField(GUIContent.none, clone, typeof(GameObject), true);
                 }
             }
@@ -880,7 +880,7 @@ namespace Lean.Pool.Editor {
 
         [UnityEditor.MenuItem("GameObject/Lean/Pool", false, 1)]
         private static void CreateLocalization() {
-            var gameObject = new GameObject(typeof(LeanGameObjectPool).Name);
+            GameObject gameObject = new GameObject(typeof(LeanGameObjectPool).Name);
 
             UnityEditor.Undo.RegisterCreatedObjectUndo(gameObject, "Create LeanGameObjectPool");
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Lean.Pool;
+using Manager;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {

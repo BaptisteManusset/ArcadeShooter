@@ -842,7 +842,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []
@@ -1024,7 +1024,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []
@@ -1423,7 +1423,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []
@@ -1920,7 +1920,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []
@@ -2411,7 +2411,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []
@@ -4222,7 +4222,7 @@ MonoBehaviour:
   capacity: 20
   recycle: 1
   persist: 0
-  stamp: 1
+  stamp: 0
   warnings: 1
   spawnedClonesList: []
   despawnedClones: []

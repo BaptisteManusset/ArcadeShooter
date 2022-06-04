@@ -1,4 +1,5 @@
 using Lean.Pool;
+using UI;
 using UnityEngine;
 namespace Manager {
     public class Manager : MonoBehaviour {

@@ -1,19 +1,20 @@
 ﻿using System;
 using Lean.Pool;
 using UnityEngine;
-using UnityEngine.Serialization;
-public class PoolManagerVfx : MonoBehaviour {
-	public LeanGameObjectPool VfxPool;
+namespace VFX.Manager {
+	public class PoolManagerVfx : MonoBehaviour {
+		public LeanGameObjectPool VfxPool;
 
-	[Space] public MobPool Player;
-	[Space] public MobPool Sword;
-	[Space] public MobPool Tower;
+		[Space] public MobPool Player = new MobPool();
+		[Space] public MobPool Sword = new MobPool();
+		[Space] public MobPool Tower = new MobPool();
 
-	[Serializable]
-	public class MobPool {
-		public LeanGameObjectPool Spawn;
-		public LeanGameObjectPool TakeDamage;
-		public LeanGameObjectPool Fire;
-		public LeanGameObjectPool Death;
+		[Serializable]
+		public class MobPool {
+			public LeanGameObjectPool Spawn;
+			public LeanGameObjectPool TakeDamage;
+			public LeanGameObjectPool Fire;
+			public LeanGameObjectPool Death;
+		}
 	}
 }

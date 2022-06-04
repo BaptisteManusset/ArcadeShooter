@@ -827,6 +827,21 @@
                             }
                         }
                     }
+                },
+                {
+                    "Key": "qdsdsqsd",
+                    "Value": {
+                        "selected": false,
+                        "data": {
+                            "Score": {
+                                "FloatType": {
+                                    "_float": 17.71951,
+                                    "InitValue": 0.0,
+                                    "$type": "FloatType"
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         }
