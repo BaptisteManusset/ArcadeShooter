@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 4449844296246043932}
   - component: {fileID: 4449844296246043934}
   - component: {fileID: 4449844296246043905}
+  - component: {fileID: 8437501655447230308}
+  - component: {fileID: 6624796665850647502}
   m_Layer: 0
-  m_Name: VFx
+  m_Name: Player_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,12 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffb478149965be4781c39ba23036c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 456f0b984c02719439d1b2423ab0758e, type: 3}
   m_AudioConfig:
-    AudioClip: {fileID: 8300000, guid: 456f0b984c02719439d1b2423ab0758e, type: 3}
-    Volume: 1
-    Pitch: 1
-    MixerGroup: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: a21a2c9ff4e08b2488fcce1294213f2d, type: 3}
+    loop: 0
+    Volume: 0.1
 --- !u!198 &4449844296246043934
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4449844296246043904}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -134,7 +134,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -187,7 +187,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -678,14 +678,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 4
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 0, y: 0, z: 0}
+    m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -4823,3 +4823,32 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!54 &8437501655447230308
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449844296246043904}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6624796665850647502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449844296246043904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a59bf981769e4a4f9230599cab9261a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cachedPool: {fileID: 0}

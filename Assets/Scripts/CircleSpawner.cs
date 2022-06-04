@@ -18,7 +18,10 @@ public class CircleSpawner : MonoBehaviour {
     void Spawning() {
         if (!GameState.IsPlay()) return;
 
-        LeanPool.Spawn(entity, transform.position + RandomPointOnCircleEdge(distance), transform.rotation);
+
+        Debug.Log($"{entity}  {transform.position + RandomPointOnCircleEdge(distance)}  {transform.rotation}" );
+        // LeanPool.Spawn(entity, transform.position + RandomPointOnCircleEdge(distance), transform.rotation);
+        LeanPool.Spawn(entity, transform.position , transform.rotation);
 
         // if (soundAtSpawn != GameSound.None)
             // SoundManager.Instance.PlaySound(soundAtSpawn);

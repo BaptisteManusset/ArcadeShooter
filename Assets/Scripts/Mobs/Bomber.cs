@@ -2,7 +2,7 @@ using Lean.Pool;
 using UnityEngine;
 
 public class Bomber : MonoBehaviour, IPoolable {
-    private Rigidbody rigidbody;
+    private new Rigidbody rigidbody;
 
     [SerializeField] private float speed = 10;
 

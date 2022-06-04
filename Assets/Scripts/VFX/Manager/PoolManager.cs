@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using Databox.Utils;
 using Lean.Pool;
 using UnityEngine;
 
 public class PoolManager : Singleton<PoolManager> {
+
+	[Header("Pooled Prefabs")]
 	[SerializeField]
 	LeanGameObjectPool m_shielder;
 	public LeanGameObjectPool Shielder => m_shielder;
@@ -23,6 +26,4 @@ public class PoolManager : Singleton<PoolManager> {
 
 	[Header("VFX")] [SerializeField] PoolManagerVfx m_vfx;
 	public PoolManagerVfx VFX => m_vfx;
-
-
 }

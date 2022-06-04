@@ -1,8 +1,4 @@
-﻿using System;
-using Hellmade.Sound;
-// using LeakyAbstraction;
-using Lean.Pool;
-using Unity.Mathematics;
+﻿using Lean.Pool;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,11 +6,7 @@ using UnityEngine.Events;
 public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
     [SerializeField] private float currentHealth = -1;
     [SerializeField] public float maxHealth = 100;
-
-
-    [Space] [SerializeField] private GameObject deathParticle;
-    [SerializeField] private Transform deathParticleSpawn;
-
+    
     [SerializeField] private bool BodyCanTakeDamage = true;
 
     private bool alreadyDead;
@@ -23,12 +15,8 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
     public UnityAction OnDead;
     public UnityAction OnTakeDamage;
     public UnityAction OnHealthChange;
-    private Rigidbody rb;
-
 
     private void Awake() {
-        rb = GetComponent<Rigidbody>();
-
         currentHealth = maxHealth;
     }
 
@@ -50,9 +38,7 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
         currentHealth = maxHealth;
     }
 
-    public void OnDespawn() {
-        /**/
-    }
+    public void OnDespawn() {}
 
     public float GetHealth() {
         return currentHealth;
@@ -76,12 +62,8 @@ public class HealthManager : MonoBehaviour, IDamageable, IPoolable {
 
     private void Died() {
         alreadyDead = true;
-        if (deathParticleSpawn == null) deathParticleSpawn = transform;
         OnDead?.Invoke();
-
-
-        LeanPool.Spawn(deathParticle, deathParticleSpawn.position, quaternion.identity);
-
+        
         LeanPool.Despawn(gameObject, .1f);
     }
 

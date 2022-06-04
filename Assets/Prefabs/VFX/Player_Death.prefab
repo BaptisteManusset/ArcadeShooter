@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4449844296246043934}
   - component: {fileID: 4449844296246043905}
   m_Layer: 0
-  m_Name: VFx
+  m_Name: Player_Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffb478149965be4781c39ba23036c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: 456f0b984c02719439d1b2423ab0758e, type: 3}
+  _audioClip: {fileID: 8300000, guid: a7091f7b917d7e943beb06db935303c5, type: 3}
   m_AudioConfig:
-    AudioClip: {fileID: 8300000, guid: 456f0b984c02719439d1b2423ab0758e, type: 3}
+    AudioClip: {fileID: 8300000, guid: a7091f7b917d7e943beb06db935303c5, type: 3}
     Volume: 1
     Pitch: 1
     MixerGroup: {fileID: 0}
