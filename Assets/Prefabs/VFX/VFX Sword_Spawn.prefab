@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4449844296246043933}
   - component: {fileID: 4449844296246043932}
   m_Layer: 0
-  m_Name: Sword_Spawn
+  m_Name: VFX Sword_Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
