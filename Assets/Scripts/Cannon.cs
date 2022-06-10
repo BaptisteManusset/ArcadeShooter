@@ -23,8 +23,9 @@ public class Cannon : MonoBehaviour {
 
 					if (bullet == null) Debug.LogError("bullet is null");
 
-					LeanPool.Spawn(bullet, spawnPoint.position, rotation);
-
+					// LeanPool.Spawn(bullet, spawnPoint.position, rotation);
+					PoolManager.Instance.Bullet.Spawn(spawnPoint.position, rotation);
+					
 					PoolManager.Instance.VFX.Player.Fire.Spawn(transform.position, Quaternion.Euler(spawnPoint.forward));
 
 					// LeanPool.Despawn(b, .5f);

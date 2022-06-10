@@ -75,7 +75,7 @@ namespace Lean.Pool {
                 rotation = Quaternion.Inverse(parent.rotation) * rotation;
             }
 
-            Debug.Log($"prefab:{prefab} position:{position} rotation:{rotation} prefab.transform.localScale:{prefab.transform.localScale} parent:{parent} false:{false}");
+            Debug.Log($"Spawn prefab: {prefab}");
             return Spawn(prefab, position, rotation, prefab.transform.localScale, parent, false);
         }
 

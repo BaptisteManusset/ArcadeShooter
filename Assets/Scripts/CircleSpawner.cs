@@ -9,9 +9,6 @@ public class CircleSpawner : MonoBehaviour {
 	[SerializeField] private float distance = 70;
 
 	[SerializeField] private GameObject entity;
-
-	// [SerializeField] private GameSound soundAtSpawn = GameSound.None;
-
 	private void Start() {
 		InvokeRepeating(nameof(Spawning), 1, 10);
 	}
@@ -19,8 +16,6 @@ public class CircleSpawner : MonoBehaviour {
 	void Spawning() {
 		if (!GameState.IsPlay()) return;
 
-
-		Debug.Log($"{entity}  {transform.position + RandomPointOnCircleEdge(distance)}  {transform.rotation}");
 		LeanPool.Spawn(entity, transform.position + RandomPointOnCircleEdge(distance), transform.rotation);
 	}
 

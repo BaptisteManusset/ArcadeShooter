@@ -747,7 +747,9 @@ namespace Lean.Pool {
                     break;
                 case NotificationType.IPoolable:
                     clone.GetComponents(tempPoolables);
-                    for (int i = tempPoolables.Count - 1; i >= 0; i--) tempPoolables[i].OnSpawn();
+                    for(int i = tempPoolables.Count - 1; i >= 0; i--) {
+                        tempPoolables[i].OnSpawn();
+                    }
                     break;
                 case NotificationType.BroadcastIPoolable:
                     clone.GetComponentsInChildren(tempPoolables);

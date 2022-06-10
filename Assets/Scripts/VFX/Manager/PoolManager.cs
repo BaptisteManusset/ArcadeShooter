@@ -7,6 +7,10 @@ using UnityEngine;
 using VFX.Manager;
 
 public class PoolManager : Singleton<PoolManager> {
+	
+	[SerializeField]
+	LeanGameObjectPool m_bullet;
+	public LeanGameObjectPool Bullet => m_bullet;
 
 	[Header("Pooled Prefabs")]
 	[SerializeField]
